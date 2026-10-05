@@ -1,0 +1,23 @@
+CAMBIOS REALIZADOS
+==================
+
+SERVICIOS REST
+- CatalogoService: GET/POST/PUT/DELETE.
+- CarroComprasService: GET/POST/PUT/DELETE + resumen/limpiar/comprar.
+- RegistroService: GET/POST/PUT/DELETE.
+- SeguridadService: POST login.
+- VendedoresService: GET/POST/PUT/DELETE.
+
+BACKEND
+- ServicioRegistroMock marcado @Stateless.
+- ServicioSeguridadMock marcado @Stateless.
+- ServicioPersistenciaMock marcado @Stateless.
+- Interfaces Local de Registro, Seguridad y Persistencia marcadas @Local.
+- Interfaces Remote de Registro y Seguridad marcadas @Remote.
+- Se agregó actualizarMueble a catálogo.
+- Se agregó actualizarCliente a registro.
+- Se agregó actualizarVendedor a vendedores.
+
+PRUEBAS
+- Colección Postman lista para importar.
+- Los fuentes Java fueron validados sintácticamente en la preparación del ZIP.

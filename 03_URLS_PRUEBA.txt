@@ -1,0 +1,32 @@
+BASE URL
+http://localhost:8080/mueblesdelosalpes.servicios/webresources
+
+CATALOGO
+GET    /Catalogo/muebles/
+POST   /Catalogo/muebles/
+PUT    /Catalogo/muebles/{id}
+DELETE /Catalogo/muebles/{id}
+
+CARRITO
+GET    /CarroCompras/muebles/
+GET    /CarroCompras/total/
+POST   /CarroCompras/agregar/
+PUT    /CarroCompras/muebles/
+DELETE /CarroCompras/borrar/
+DELETE /CarroCompras/limpiar/
+POST   /CarroCompras/comprar/
+
+REGISTRO
+GET    /Registro/clientes/
+POST   /Registro/clientes/
+PUT    /Registro/clientes/{login}
+DELETE /Registro/clientes/{login}
+
+SEGURIDAD
+POST   /Seguridad/login/
+
+VENDEDORES
+GET    /Vendedores/vendedores/
+POST   /Vendedores/vendedores/
+PUT    /Vendedores/vendedores/{id}
+DELETE /Vendedores/vendedores/{id}

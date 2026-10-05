@@ -1,0 +1,20 @@
+SUBIR A TU GITHUB
+==================
+
+IMPORTANTE: ejecuta esto en la carpeta raíz descomprimida.
+
+1. Crea un repositorio VACÍO en tu cuenta GitHub, por ejemplo:
+   MueblesLosAlpes-ServiciosREST
+
+2. En PowerShell:
+
+git init
+git add .
+git commit -m "Laboratorio servicios REST - Muebles de los Alpes"
+git branch -M main
+git remote add origin https://github.com/TU_USUARIO/MueblesLosAlpes-ServiciosREST.git
+git push -u origin main
+
+Si origin ya existe:
+git remote set-url origin https://github.com/TU_USUARIO/MueblesLosAlpes-ServiciosREST.git
+git push -u origin main

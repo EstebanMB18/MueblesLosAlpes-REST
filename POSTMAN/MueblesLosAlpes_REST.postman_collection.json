@@ -1,0 +1,586 @@
+{
+  "info": {
+    "name": "Muebles Los Alpes - REST Laboratorio",
+    "_postman_id": "muebles-los-alpes-rest-2026",
+    "description": "Pruebas GET/POST/PUT/DELETE de los servicios REST del laboratorio.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080/mueblesdelosalpes.servicios/webresources"
+    }
+  ],
+  "item": [
+    {
+      "name": "1 - Catalogo",
+      "item": [
+        {
+          "name": "GET - Listar muebles",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/Catalogo/muebles/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Catalogo",
+                "muebles"
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST - Crear mueble",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/Catalogo/muebles/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Catalogo",
+                "muebles"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"referencia\": 0,\n  \"nombre\": \"Mesa laboratorio REST\",\n  \"descripcion\": \"Mueble creado desde Postman\",\n  \"tipo\": \"Interior\",\n  \"precio\": 250000,\n  \"imagen\": \"mesaRest\",\n  \"cantidad\": 5,\n  \"seleccion\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "PUT - Actualizar mueble 1",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/Catalogo/muebles/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Catalogo",
+                "muebles",
+                "1"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"referencia\": 1,\n  \"nombre\": \"Silla clásica actualizada\",\n  \"descripcion\": \"Actualizada mediante PUT\",\n  \"tipo\": \"Interior\",\n  \"precio\": 150000,\n  \"imagen\": \"sillaClasica\",\n  \"cantidad\": 45,\n  \"seleccion\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "DELETE - Eliminar mueble 8",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/Catalogo/muebles/8",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Catalogo",
+                "muebles",
+                "8"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "2 - Carrito",
+      "item": [
+        {
+          "name": "GET - Ver carrito",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/CarroCompras/muebles/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "CarroCompras",
+                "muebles"
+              ]
+            }
+          }
+        },
+        {
+          "name": "GET - Resumen carrito",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/CarroCompras/total/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "CarroCompras",
+                "total"
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST - Agregar mueble",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/CarroCompras/agregar/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "CarroCompras",
+                "agregar"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"referencia\": 1,\n    \"nombre\": \"Silla clásica\",\n    \"descripcion\": \"Una confortable silla\",\n    \"tipo\": \"Interior\",\n    \"precio\": 123,\n    \"imagen\": \"sillaClasica\",\n    \"cantidad\": 0,\n    \"seleccion\": false\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "PUT - Reemplazar carrito",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/CarroCompras/muebles/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "CarroCompras",
+                "muebles"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"referencia\": 2,\n    \"nombre\": \"Sillón new wave\",\n    \"descripcion\": \"Prueba PUT\",\n    \"tipo\": \"Interior\",\n    \"precio\": 5655,\n    \"imagen\": \"newWave\",\n    \"cantidad\": 2,\n    \"seleccion\": false\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "DELETE - Quitar mueble",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/CarroCompras/borrar/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "CarroCompras",
+                "borrar"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"referencia\": 2,\n    \"cantidad\": 1\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "DELETE - Limpiar carrito",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/CarroCompras/limpiar/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "CarroCompras",
+                "limpiar"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "3 - Registro",
+      "item": [
+        {
+          "name": "GET - Listar clientes",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/Registro/clientes/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Registro",
+                "clientes"
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST - Registrar cliente",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/Registro/clientes/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Registro",
+                "clientes"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"login\": \"estudiante_rest\",\n  \"contraseña\": \"123456\",\n  \"tipoUsuario\": \"Cliente\",\n  \"nombreCompleto\": \"Estudiante REST\",\n  \"documento\": 1020304050,\n  \"tipoDocumento\": \"CC\",\n  \"telefonoLocal\": 6015550000,\n  \"telefonoCelular\": 3005550000,\n  \"direccion\": \"Bogotá\",\n  \"correo\": \"estudiante@example.com\",\n  \"seleccion\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "PUT - Actualizar cliente",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/Registro/clientes/estudiante_rest",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Registro",
+                "clientes",
+                "estudiante_rest"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"login\": \"estudiante_rest\",\n  \"contraseña\": \"123456\",\n  \"tipoUsuario\": \"Cliente\",\n  \"nombreCompleto\": \"Estudiante REST Actualizado\",\n  \"documento\": 1020304050,\n  \"tipoDocumento\": \"CC\",\n  \"telefonoLocal\": 6015551111,\n  \"telefonoCelular\": 3005551111,\n  \"direccion\": \"Bogotá D.C.\",\n  \"correo\": \"estudiante.actualizado@example.com\",\n  \"seleccion\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "DELETE - Eliminar cliente",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/Registro/clientes/estudiante_rest",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Registro",
+                "clientes",
+                "estudiante_rest"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "4 - Seguridad",
+      "item": [
+        {
+          "name": "POST - Login administrador",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/Seguridad/login/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Seguridad",
+                "login"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"login\": \"admin\",\n  \"contrasena\": \"adminadmin\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "POST - Login cliente",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/Seguridad/login/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Seguridad",
+                "login"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"login\": \"client\",\n  \"contrasena\": \"clientclient\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "5 - Vendedores",
+      "item": [
+        {
+          "name": "GET - Listar vendedores",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/Vendedores/vendedores/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Vendedores",
+                "vendedores"
+              ]
+            }
+          }
+        },
+        {
+          "name": "POST - Crear vendedor",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/Vendedores/vendedores/",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Vendedores",
+                "vendedores"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"identificacion\": 0,\n  \"nombres\": \"Laura\",\n  \"apellidos\": \"Rest Prueba\",\n  \"experiencia\": [],\n  \"salario\": 1500000,\n  \"comisionVentas\": 120000,\n  \"perfil\": \"Asesora comercial\",\n  \"foto\": \"vendedorRest\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "PUT - Actualizar vendedor 1",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/Vendedores/vendedores/1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Vendedores",
+                "vendedores",
+                "1"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"identificacion\": 1,\n  \"nombres\": \"Carlos Antonio\",\n  \"apellidos\": \"Gomez Rodriguez\",\n  \"experiencia\": [],\n  \"salario\": 1100000,\n  \"comisionVentas\": 90000,\n  \"perfil\": \"Técnico en auditoría y costos - actualizado\",\n  \"foto\": \"vendedor1\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "DELETE - Eliminar vendedor 4",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/Vendedores/vendedores/4",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "Vendedores",
+                "vendedores",
+                "4"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
